@@ -10,5 +10,11 @@ class Triangle {
 		v2 = new Point(x2, y2);
 		v3 = new Point(x3, y3);
 	}
-
+  public double getPerimeter(){
+    return (v1.distanceTo(v2) + v1.distanceTo(v3) + v2.distanceTo(v3));
+  }
+  public double getArea(){
+    double semiP = getPerimeter() / 2.0;
+    return (Math.sqrt(semiP * (semiP - v1.distanceTo(v2)) * (semiP - v2.distanceTo(v3)) * (semiP - v3.distanceTo(v1))));
+  }
 }
