@@ -17,4 +17,18 @@ class Triangle {
     double semiP = getPerimeter() / 2.0;
     return (Math.sqrt(semiP * (semiP - v1.distanceTo(v2)) * (semiP - v2.distanceTo(v3)) * (semiP - v3.distanceTo(v1))));
   }
+  public String classify(){
+    double side1 = (Math.round(10000 * v1.distanceTo(v2)) / 10000.0);
+    double side2 = (Math.round(10000 * v1.distanceTo(v3)) / 10000.0);
+    double side3 = (Math.round(10000 * v2.distanceTo(v3)) / 10000.0);
+    if ((side1 == side2) && (side2 == side3)){
+      return "equilateral";
+    }
+    else if (((side1 != side2) && (side2 != side3)) && (side1 != side3)){
+      return "scalene";
+    }
+    else{
+      return "isoceles";
+    }
+  }
 }
